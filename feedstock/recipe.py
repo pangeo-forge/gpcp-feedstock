@@ -4,7 +4,7 @@ from pangeo_forge_recipes.patterns import pattern_from_file_sequence, FileType
 from pangeo_forge_recipes.recipes import XarrayZarrRecipe
 
 # The GPCP files use an annoying naming convention which embeds the creation date in the file name.
-# e.g. https 1996/gpcp_v01r03_daily_d19961001_c20170530.nc
+# e.g., https 1996/gpcp_v01r03_daily_d19961001_c20170530.nc
 # This makes it very hard to create a deterministic function to generate the file names,
 # so instead we crawl the NCEI server.
 

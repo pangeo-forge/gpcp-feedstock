@@ -11,7 +11,6 @@ jobs:
     env:
       FEEDSTOCK_SPEC: "${{ github.repository }}"
       REF: "${{ github.ref }}"
-      IS_BETA: "${{ contains(github.ref, 'beta') }}"
     steps:
       - name: dispatch push event
         uses: peter-evans/repository-dispatch@v1
@@ -19,4 +18,4 @@ jobs:
           token: ${{ secrets.PANGEO_FORGE_BOT_TOKEN }}
           repository: pangeo-forge/registrar
           event-type: dispatch-push-event
-          client-payload: '{"feedstock_spec": "${{ env.FEEDSTOCK_SPEC }}", "ref": "${{ env.REF }}", "is_beta": "${{ env.IS_BETA }}"}'
+          client-payload: '{"feedstock_spec": "${{ env.FEEDSTOCK_SPEC }}", "ref": "${{ env.REF }}", "is_beta": "true"}'
