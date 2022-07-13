@@ -18,7 +18,7 @@ provenance:
     - name: "University of Maryland"
       description: >
         University of Maryland College Park Earth System Science Interdisciplinary Center
-        (ESSIC) and Cooperative Institute for Climate and Satellites (CICS)
+        (ESSIC) and Cooperative Institute for Climate and Satellites (CICS).
       roles:
         - producer
       url: http://gpcp.umd.edu/
