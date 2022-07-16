@@ -1,7 +1,10 @@
+from datetime import date
 import fsspec
 from fsspec.implementations.http import HTTPFileSystem
 from pangeo_forge_recipes.patterns import pattern_from_file_sequence, FileType
 from pangeo_forge_recipes.recipes import XarrayZarrRecipe
+
+current_year = date.today().year
 
 # The GPCP files use an annoying naming convention which embeds the creation date in the file name.
 # e.g., https 1996/gpcp_v01r03_daily_d19961001_c20170530.nc
@@ -9,7 +12,7 @@ from pangeo_forge_recipes.recipes import XarrayZarrRecipe
 # so instead we crawl the NCEI server.
 
 url_base = "https://www.ncei.noaa.gov/data/global-precipitation-climatology-project-gpcp-daily/access/"
-years = range(1996, 2022)
+years = range(1996, current_year)
 file_list = []
 fs = HTTPFileSystem()
 for year in years:
